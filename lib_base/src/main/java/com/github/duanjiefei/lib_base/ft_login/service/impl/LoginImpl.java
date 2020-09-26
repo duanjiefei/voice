@@ -8,9 +8,7 @@ import com.github.duanjiefei.lib_base.ft_login.modle.User;
 import com.github.duanjiefei.lib_base.ft_login.service.LoginService;
 
 public class LoginImpl {
-
-    @Autowired(name = "/login/login_service") protected LoginService mLoginService;
-
+    @Autowired(name = "/ft_login/login_service") protected LoginService mLoginService;
     private static LoginImpl mLoginImpl = null;
 
     public static LoginImpl getInstance() {

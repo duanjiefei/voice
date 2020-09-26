@@ -1,5 +1,6 @@
 package com.github.duanjiefei.voice.api;
 
+import com.github.duanjiefei.lib_base.ft_login.modle.User;
 import com.github.duanjiefei.lib_network.CommonOkHttpClient;
 import com.github.duanjiefei.lib_network.listener.DisposeDataHandle;
 import com.github.duanjiefei.lib_network.listener.DisposeDataListener;
@@ -8,7 +9,6 @@ import com.github.duanjiefei.lib_network.request.RequestParams;
 import com.github.duanjiefei.voice.model.discovery.BaseRecommandModel;
 import com.github.duanjiefei.voice.model.discovery.BaseRecommandMoreModel;
 import com.github.duanjiefei.voice.model.friend.BaseFriendModel;
-import com.github.duanjiefei.voice.model.user.User;
 
 public class RequestCenter {
     static class HttpConstants {

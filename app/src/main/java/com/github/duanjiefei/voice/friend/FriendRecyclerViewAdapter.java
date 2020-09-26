@@ -8,6 +8,7 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
 import com.github.duanjiefei.lib_audio.app.AudioHelper;
+import com.github.duanjiefei.lib_base.ft_login.service.impl.LoginImpl;
 import com.github.duanjiefei.lib_common_ui.MultiImageViewLayout;
 import com.github.duanjiefei.lib_common_ui.recyclerview.ItemViewDelegate;
 import com.github.duanjiefei.lib_common_ui.recyclerview.MultiItemTypeAdapter;
@@ -16,9 +17,8 @@ import com.github.duanjiefei.lib_common_ui.recyclerview.ViewHolder;
 import com.github.duanjiefei.lib_image_loader.ImageLoaderManager;
 import com.github.duanjiefei.lib_video.VideoAdContext;
 import com.github.duanjiefei.voice.R;
-import com.github.duanjiefei.voice.login.LoginActivity;
+
 import com.github.duanjiefei.voice.model.friend.FriendBodyValue;
-import com.github.duanjiefei.voice.utils.UserManager;
 
 import java.util.List;
 
@@ -72,9 +72,9 @@ public class FriendRecyclerViewAdapter extends MultiItemTypeAdapter {
             holder.setOnClickListener(R.id.guanzhu_view, new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    if (!UserManager.getInstance().hasLogin()) {
+                    if (!LoginImpl.getInstance().hasLogin()) {
                         //goto login
-                        LoginActivity.start(mContext);
+                        LoginImpl.getInstance().login(mContext);
                     }
                 }
             });
@@ -114,9 +114,9 @@ public class FriendRecyclerViewAdapter extends MultiItemTypeAdapter {
             holder.setOnClickListener(R.id.guanzhu_view, new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    if (!UserManager.getInstance().hasLogin()) {
+                    if (!LoginImpl.getInstance().hasLogin()) {
                         //goto login
-                        LoginActivity.start(mContext);
+                        LoginImpl.getInstance().login(mContext);
                     }
                 }
             });

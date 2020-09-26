@@ -1,5 +1,7 @@
 package com.github.duanjiefei.ft_login.presenter;
 
+import android.util.Log;
+
 import com.github.duanjiefei.ft_login.api.MockData;
 import com.github.duanjiefei.ft_login.api.RequestCenter;
 import com.github.duanjiefei.lib_base.ft_login.event.LoginEvent;
@@ -14,6 +16,7 @@ import org.greenrobot.eventbus.EventBus;
 
 public class UserLoginPresenter implements IUserLoginPresenter, DisposeDataListener {
 
+    private static final String TAG = "UserLoginPresenter";
     private IUserLoginView  mLoginView;
 
     public UserLoginPresenter(IUserLoginView mLoginView) {
@@ -28,6 +31,7 @@ public class UserLoginPresenter implements IUserLoginPresenter, DisposeDataListe
 
     @Override
     public void onSuccess(Object responseObj) {
+        Log.d(TAG, "onSuccess: ");
         mLoginView.hideLoadingView();
         User user = (User) responseObj;
         //TODO
@@ -38,6 +42,7 @@ public class UserLoginPresenter implements IUserLoginPresenter, DisposeDataListe
 
     @Override
     public void onFailure(Object reasonObj) {
+        Log.d(TAG, "onFailure: ");
         mLoginView.hideLoadingView();
         onSuccess(new Gson().fromJson(MockData.LOGIN_DATA,User.class));
         mLoginView.showLoginFailedView();

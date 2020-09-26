@@ -1,6 +1,8 @@
 package com.github.duanjiefei.voice.model.discovery;
 
-import com.github.duanjiefei.voice.model.BaseModel;
+
+
+import com.github.duanjiefei.lib_base.ft_login.modle.BaseModel;
 
 import java.util.ArrayList;
 

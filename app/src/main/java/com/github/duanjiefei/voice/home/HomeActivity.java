@@ -13,17 +13,16 @@ import android.view.View;
 import android.widget.ImageView;
 
 import com.alibaba.android.arouter.launcher.ARouter;
+import com.github.duanjiefei.ft_login.LoginActivity;
 import com.github.duanjiefei.lib_audio.app.AudioHelper;
 import com.github.duanjiefei.lib_audio.model.AudioBean;
+import com.github.duanjiefei.lib_base.ft_login.event.LoginEvent;
+import com.github.duanjiefei.lib_base.ft_login.service.impl.LoginImpl;
 import com.github.duanjiefei.lib_common_ui.BaseActivity;
 import com.github.duanjiefei.lib_image_loader.ImageLoaderManager;
 import com.github.duanjiefei.voice.R;
 import com.github.duanjiefei.lib_common_ui.Constant;
-import com.github.duanjiefei.voice.login.LoginActivity;
-import com.github.duanjiefei.voice.login.LoginEvent;
 import com.github.duanjiefei.voice.model.CHANNEL;
-
-import com.github.duanjiefei.voice.utils.UserManager;
 
 import net.lucode.hackware.magicindicator.MagicIndicator;
 import net.lucode.hackware.magicindicator.ViewPagerHelper;
@@ -172,8 +171,8 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener{
                 }
                 break;
             case R.id.unloggin_layout:
-                if (!UserManager.getInstance().hasLogin()){
-                    LoginActivity.start(this);
+                if (!LoginImpl.getInstance().hasLogin()){
+                    LoginImpl.getInstance().login(this);
                 }else {
                     mDrawerLayout.closeDrawer(Gravity.LEFT);
                 }
@@ -205,7 +204,7 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener{
         Log.d(TAG, "onLoginEvent: ");
         unLoginLayout.setVisibility(View.GONE);
         mPhotoView.setVisibility(View.VISIBLE);
-        ImageLoaderManager.getInstance().displayImageForCircle(mPhotoView,UserManager.getInstance().getUser().data.photoUrl);
+        ImageLoaderManager.getInstance().displayImageForCircle(mPhotoView,LoginImpl.getInstance().getUserInfo().data.photoUrl);
     }
     @Override
     protected void onDestroy() {

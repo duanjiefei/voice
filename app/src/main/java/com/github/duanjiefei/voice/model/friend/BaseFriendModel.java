@@ -1,7 +1,7 @@
 package com.github.duanjiefei.voice.model.friend;
 
 
-import com.github.duanjiefei.voice.model.BaseModel;
+import com.github.duanjiefei.lib_base.ft_login.modle.BaseModel;
 
 /**
  * Created by renzhiqiang on
