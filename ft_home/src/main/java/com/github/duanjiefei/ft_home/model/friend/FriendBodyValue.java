@@ -3,6 +3,7 @@ package com.github.duanjiefei.ft_home.model.friend;
 
 import com.github.duanjiefei.lib_audio.model.AudioBean;
 import com.github.duanjiefei.lib_base.BaseModel;
+import com.github.duanjiefei.lib_base.audio.model.CommonAudioBean;
 
 import java.util.ArrayList;
 
@@ -20,5 +21,5 @@ public class FriendBodyValue extends BaseModel {
   public String videoUrl;
   public String zan;
   public String msg;
-  public AudioBean audioBean;
+  public CommonAudioBean audioBean;
 }

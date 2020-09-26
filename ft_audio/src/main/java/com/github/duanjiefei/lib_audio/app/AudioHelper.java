@@ -7,8 +7,9 @@ import android.content.Context;
 import com.github.duanjiefei.lib_audio.GreenDaoHelper;
 import com.github.duanjiefei.lib_audio.core.AudioController;
 import com.github.duanjiefei.lib_audio.core.MusicService;
-import com.github.duanjiefei.lib_audio.model.AudioBean;
+import com.github.duanjiefei.lib_audio.utils.Utils;
 import com.github.duanjiefei.lib_audio.view.MusicPlayerActivity;
+import com.github.duanjiefei.lib_base.audio.model.CommonAudioBean;
 
 import java.util.ArrayList;
 
@@ -32,12 +33,12 @@ public final class AudioHelper {
   }
 
   //外部启动MusicService方法
-  public static void startMusicService(ArrayList<AudioBean> audios) {
-    MusicService.startMusicService(audios);
+  public static void startMusicService(ArrayList<CommonAudioBean> audios) {
+    MusicService.startMusicService(Utils.convertFrom(audios));
   }
 
-  public static void addAudio(Activity activity, AudioBean bean) {
-    AudioController.getInstance().addAudio(bean);
+  public static void addAudio(Activity activity, CommonAudioBean bean) {
+    AudioController.getInstance().addAudio(Utils.convertFrom(bean));
     MusicPlayerActivity.start(activity);
   }
 

@@ -8,6 +8,7 @@ import android.widget.RelativeLayout;
 import com.alibaba.android.arouter.facade.annotation.Autowired;
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.github.duanjiefei.lib_base.audio.AudioService;
+import com.github.duanjiefei.lib_base.audio.impl.AudioImpl;
 
 public class VideoAdSlot implements CustomVideoView.ADVideoPlayerListener {
 
@@ -19,8 +20,6 @@ public class VideoAdSlot implements CustomVideoView.ADVideoPlayerListener {
     private SDKSlotListener sdkSlotListener;
     private String adVideoUrl;
 
-    @Autowired(name = "/audio/audio_service")
-    protected AudioService mAudioService;
 
     public VideoAdSlot(String adVideoUrl,SDKSlotListener sdkSlotListener) {
         ARouter.getInstance().inject(this);
@@ -79,7 +78,7 @@ public class VideoAdSlot implements CustomVideoView.ADVideoPlayerListener {
         dialog.show();
 
         //TODO
-        mAudioService.pauseAudio();
+        AudioImpl.getInstance().pauseAudio();
     }
 
     private void bigPlayComplete() {
@@ -104,7 +103,7 @@ public class VideoAdSlot implements CustomVideoView.ADVideoPlayerListener {
         customVideoView.seekAndResume(position);
 
         //TODO
-        mAudioService.resumeAudio();
+        AudioImpl.getInstance().resumeAudio();
     }
 
     @Override

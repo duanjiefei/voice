@@ -10,6 +10,7 @@ import android.widget.RelativeLayout;
 import com.github.duanjiefei.ft_home.R;
 import com.github.duanjiefei.ft_home.model.friend.FriendBodyValue;
 import com.github.duanjiefei.lib_audio.app.AudioHelper;
+import com.github.duanjiefei.lib_base.audio.impl.AudioImpl;
 import com.github.duanjiefei.lib_base.ft_login.service.impl.LoginImpl;
 import com.github.duanjiefei.lib_common_ui.MultiImageViewLayout;
 import com.github.duanjiefei.lib_common_ui.recyclerview.ItemViewDelegate;
@@ -63,7 +64,7 @@ public class FriendRecyclerViewAdapter extends MultiItemTypeAdapter {
                 @Override
                 public void onClick(View v) {
                     //调用播放器装饰类
-                    AudioHelper.addAudio((Activity) mContext, friendBodyValue.audioBean);
+                    AudioImpl.getInstance().addAudio((Activity) mContext, friendBodyValue.audioBean);
                 }
             });
             holder.setOnClickListener(R.id.guanzhu_view, new View.OnClickListener() {
