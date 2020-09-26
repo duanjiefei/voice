@@ -9,7 +9,7 @@ import android.widget.RelativeLayout;
 
 import com.github.duanjiefei.ft_home.R;
 import com.github.duanjiefei.ft_home.model.friend.FriendBodyValue;
-import com.github.duanjiefei.lib_audio.app.AudioHelper;
+
 import com.github.duanjiefei.lib_base.audio.impl.AudioImpl;
 import com.github.duanjiefei.lib_base.ft_login.service.impl.LoginImpl;
 import com.github.duanjiefei.lib_common_ui.MultiImageViewLayout;

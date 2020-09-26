@@ -43,6 +43,5 @@ dependencies {
     compileOnly project(':lib_network')
     compileOnly project(':lib_image_loader')
     compileOnly project(':lib_base')
-    compileOnly project(':ft_audio')
     compileOnly project(':lib_video')
 }

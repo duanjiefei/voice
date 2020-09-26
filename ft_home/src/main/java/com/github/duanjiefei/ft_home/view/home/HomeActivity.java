@@ -14,8 +14,6 @@ import android.widget.ImageView;
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.github.duanjiefei.ft_home.R;
 import com.github.duanjiefei.ft_home.model.CHANNEL;
-import com.github.duanjiefei.lib_audio.app.AudioHelper;
-import com.github.duanjiefei.lib_audio.model.AudioBean;
 import com.github.duanjiefei.lib_base.audio.impl.AudioImpl;
 import com.github.duanjiefei.lib_base.audio.model.CommonAudioBean;
 import com.github.duanjiefei.lib_base.ft_login.event.LoginEvent;
