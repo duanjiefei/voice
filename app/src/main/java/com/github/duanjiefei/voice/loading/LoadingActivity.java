@@ -1,30 +1,27 @@
 package com.github.duanjiefei.voice.loading;
 
-import android.annotation.SuppressLint;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 
+import com.github.duanjiefei.lib_base.ft_home.impl.HomeImpl;
 import com.github.duanjiefei.lib_common_ui.BaseActivity;
 import com.github.duanjiefei.lib_pullalive.AliveJobService;
 import com.github.duanjiefei.voice.R;
 
-import com.github.duanjiefei.voice.home.HomeActivity;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 public class LoadingActivity  extends BaseActivity {
 
-
-   @SuppressLint("HandlerLeak")
     private Handler handler = new Handler(){
         @Override
         public void handleMessage(@NonNull Message msg) {
-            super.handleMessage(msg);
-            Intent intent = new Intent(LoadingActivity.this, HomeActivity.class);
-            startActivity(intent);
+            //TODO
+            HomeImpl.getInstance().startHomeActivity(LoadingActivity.this);
             finish();
         }
     };

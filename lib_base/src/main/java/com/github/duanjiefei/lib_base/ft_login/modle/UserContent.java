@@ -1,6 +1,8 @@
 package com.github.duanjiefei.lib_base.ft_login.modle;
 
 
+import com.github.duanjiefei.lib_base.BaseModel;
+
 /**
  * 用户真正实体数据
  */
