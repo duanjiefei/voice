@@ -286,4 +286,10 @@ public class MusicPlayerActivity extends BaseActivity {
         mAudioBean = AudioController.getInstance().getNowPlaying();
         mPlayMode =  AudioController.getInstance().getPlayMode();
     }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.d(TAG, "onDestroy: ");
+    }
 }

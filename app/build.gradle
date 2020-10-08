@@ -9,7 +9,7 @@ android {
         targetSdkVersion this.rootProject.android.targetSdkVersion
         versionCode this.rootProject.android.versionCode
         versionName this.rootProject.android.versionName
-        multiDexEnabled this.rootProject.android.multiDexEnabled
+        multiDexEnabled false //this.rootProject.android.multiDexEnabled
 
         //ARouter配置
         javaCompileOptions {
@@ -56,4 +56,17 @@ dependencies {
     implementation project(':ft_login')
     implementation project(':ft_home')
     implementation project(':ft_audio')
+    implementation project(':ft_loading')
+}
+
+// Replugin 配置
+apply plugin: 'replugin-host-gradle'
+
+repluginHostConfig{
+    useAppCompat = true
+
+}
+
+dependencies {
+    implementation 'com.qihoo360.replugin:replugin-host-lib:2.3.3'
 }

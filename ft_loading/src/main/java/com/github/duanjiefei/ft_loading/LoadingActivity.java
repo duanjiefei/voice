@@ -1,4 +1,4 @@
-package com.github.duanjiefei.voice.loading;
+package com.github.duanjiefei.ft_loading;
 
 
 import android.content.Intent;
@@ -9,13 +9,11 @@ import android.os.Message;
 import com.github.duanjiefei.lib_base.ft_home.impl.HomeImpl;
 import com.github.duanjiefei.lib_common_ui.BaseActivity;
 import com.github.duanjiefei.lib_pullalive.AliveJobService;
-import com.github.duanjiefei.voice.R;
-
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-public class LoadingActivity  extends BaseActivity {
+public class LoadingActivity extends BaseActivity {
 
     private Handler handler = new Handler(){
         @Override
